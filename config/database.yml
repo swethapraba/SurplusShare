@@ -18,7 +18,7 @@ default: &default
   socket: /tmp/mysql.sock
 
 development:
-  adapter: mysql
+  adapter: mysql2
   database: SurplusShare_development
   username: root
   password: surplusshare
