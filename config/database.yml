@@ -18,15 +18,21 @@ default: &default
   socket: /tmp/mysql.sock
 
 development:
-  <<: *default
+  adapter: mysql
   database: SurplusShare_development
+  username: root
+  password: surplusshare
+  host: localhost
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
+  adapter: mysql2
   database: SurplusShare_test
+  username: root
+  password: surplusshare
+  host: localhost
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -48,7 +54,10 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: mysql2
   database: SurplusShare_production
-  username: SurplusShare
-  password: <%= ENV['SURPLUSSHARE_DATABASE_PASSWORD'] %>
+  username: root
+  password: surplusshare
+  host: localhost
+  #username: SurplusShare
+  #password: <%= ENV['SURPLUSSHARE_DATABASE_PASSWORD'] %>
