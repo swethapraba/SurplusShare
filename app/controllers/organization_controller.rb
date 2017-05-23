@@ -11,7 +11,7 @@ class OrganizationController < ApplicationController
 
 	def new
 		@organization = Organization.new
-		@organizationtypes = Organizationtype.all ####IMPORTANT TO FIX
+		@organizationtypes = Organizationtype.all
 		#is called when you display a page ot the user to take user input
 		#second line grabs all the organization types and put them in a database called @organizationtypes -> you should make it one that the user chooses or default to 'Othercharity'
 	end
