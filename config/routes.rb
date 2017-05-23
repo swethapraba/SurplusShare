@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 	root 'welcome#index' #From Heroku
-	#root 'organization#list'
 	get 'organization/list', to: 'organization#list' #From TutorialsPoint 
+	#####other methods to finish
 	get 'organization/new'
 	post 'organization/create'
 	patch 'organization/update'
