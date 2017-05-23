@@ -29,7 +29,8 @@ class OrganizationController < ApplicationController
 	end
 
 	def organization_params #used to collect data from all the fields from object :organizations
-		params.require(:organizations).permit(_:title, :price, :subject_id, :description____________________)
+		params.require(:organizations).permit(:name, :organizationtype_id, :address1, :address2, :city, :state, :zipcode, :country, :phone1, :phone2, :website, :fax, :hours1mon, :hours2tues, :hours3wed, :hours4thurs, :hours5fri, :hours6sat, :hours7sun, :nonperishable, :refridgerated, :fresh_raw, :frozen_foods, :cooked, :otherinfo, :contributername, :contributeremail, :contributerphone)
+	end
 	
 	def edit #displays data on the screen to be modified by the user
 		@organization = Organization.find(params[:id])
@@ -49,7 +50,7 @@ class OrganizationController < ApplicationController
 	end
 
 	def organization_param
-		params.require(:organization).permit(________:title, :price, :subject_id, :description)
+		params.require(:organization).permit(:name, :organizationtype_id, :address1, :address2, :city, :state, :zipcode, :country, :phone1, :phone2, :website, :fax, :hours1mon, :hours2tues, :hours3wed, :hours4thurs, :hours5fri, :hours6sat, :hours7sun, :nonperishable, :refridgerated, :fresh_raw, :frozen_foods, :cooked, :otherinfo, :contributername, :contributeremail, :contributerphone)
 	end
 
 	def delete ##THIS IS A BAD IDEA FIND A WAY TO JUST 'DEACTIVATE'
