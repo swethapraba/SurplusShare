@@ -1,1 +1,19 @@
-<p> There is nothing here to see </p>
+<% if @organizations.blank? %> <!--check whether the @organizations array has any objects in it.-->
+<!--The .blank? method returns true if the array is empty, and false if it contains any objects.-->
+<p> There are no organizations in our database. If you know of one, please add it!</p>
+<% else %>
+<p> There are currently organizations in our database</p>
+
+<ul id ="organizations">
+	<% @organizations.each do |c| %>
+	<li><%= link_to c.name, {:action => 'show', :id => c.id} -%></li> <!--The code between the <%= %> tags is a link_to method call. -->
+	<% end %>
+</ul>
+
+<% end %>
+<p><%= link_to "Add new organization", {:action => 'new'}%></p>
+
+
+<!--This @books object was created in controller inside the list method.
+
+The code between the <%= %> tags is a link_to method call. The first parameter of link_to is the text to be displayed between the <a> tags. The second parameter is what action is called when the link is clicked. In this case, it is the show method. The final parameter is the id of the book that is passed via the params object.-->
