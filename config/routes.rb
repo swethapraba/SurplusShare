@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-	get 'organization#list' #From TutorialsPoint 
+	root 'organization#list'
+	#get 'organization#list' #From TutorialsPoint 
 	get 'organization/new'
 	post 'organization/create'
 	patch 'organization/update'
